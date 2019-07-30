@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:polytron_epicmobile/View/Contact/detail.dart' as DetailData;
-import 'package:polytron_epicmobile/Model/contactrepository.dart';
-import 'package:polytron_epicmobile/Model/contact.dart';
-import 'package:polytron_epicmobile/searchhelper.dart';
 
 class ListContact extends StatefulWidget {
   ListContact({Key key, this.title}) : super(key: key);

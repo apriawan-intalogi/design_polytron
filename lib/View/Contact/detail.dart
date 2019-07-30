@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:polytron_epicmobile/Model/contact.dart';
-import 'package:polytron_epicmobile/Model/contactrepository.dart';
 
 class Detail extends StatefulWidget {
-  Detail({Key key, this.title,this.list, this.index}) : super(key: key);
-  final String title;
-  final Contact list;
+  Detail({Key key, this.title, this.index}) : super(key: key);
+  final String title1;
   final int index;
 
   @override
@@ -28,11 +25,7 @@ class _DetailState extends State<Detail> {
   
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
-  Contact contact;
   addData() async {
-    var db = ContactRepository();
-    var contact = Contact(txtperconid.text, txtname.text, txtaddress.text, txtcity.text, txtstate.text, int.parse(txtcountrynum.text), txtphonenum.text, txtcellphonenum.text, txtfaxnum.text, txtktp.text, txtnpwp.text, "COM");
-    await db.saveContact(contact);
     toback();
   }
   void toback(){
@@ -138,20 +131,6 @@ class _DetailState extends State<Detail> {
   
   @override
   void initState() {
-    if (widget.list != null){
-      contact = widget.list;
-      txtperconid = new TextEditingController(text: contact.perconid);
-      txtname = new TextEditingController(text: contact.name);
-      txtaddress = new TextEditingController(text: contact.address);
-      txtcity = new TextEditingController(text: contact.city);
-      txtstate = new TextEditingController(text: contact.state);
-      txtcountrynum = new TextEditingController(text: contact.countrynum.toString());
-      txtphonenum = new TextEditingController(text: contact.phonenum);
-      txtcellphonenum = new TextEditingController(text: contact.cellphonenum);
-      txtfaxnum = new TextEditingController(text: contact.faxnum);
-      txtktp = new TextEditingController(text: contact.ktp);
-      txtnpwp = new TextEditingController(text: contact.npwp);
-    }
     super.initState();
   }
   @override
